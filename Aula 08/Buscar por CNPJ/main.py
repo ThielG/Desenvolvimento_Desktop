@@ -68,6 +68,7 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.btn_limpar_campos)
 
         self.btn_consultar.clicked.connect(self.consulta_cnpj)
+        self.btn_limpar_campos.clicked.connect(self.limpa_campos)
 
         widget_central = QWidget()
         widget_central.setLayout(layout)
@@ -107,6 +108,19 @@ class MainWindow(QMainWindow):
 
     def valida_cnpj(self, cnpj):
         return cnpj.isnumeric() and len(cnpj) == 14
+
+    def limpa_campos(self):
+        self.txt_cnpj.clear()
+        self.txt_empresa.clear()
+        self.txt_abertura.clear()
+        self.txt_situacao.clear()
+        self.txt_tipo.clear()
+        self.txt_logradouro.clear()
+        self.txt_numero.clear()
+        self.txt_bairro.clear()
+        self.txt_municipio.clear()
+        self.txt_estado.clear()
+        self.txt_cep.clear()
 
 
 if __name__ == '__main__':
